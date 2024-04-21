@@ -1,8 +1,4 @@
 
-## Setting up a local environment
-The next few sections will help you set up a local development environment where you can quickly test your changes, 
-before opening a Pull Request. 
-
 ### Creating a fork 
 
 The first thing you need to do, is to create a fork of the repository. You can do so by clicking on the `Fork`
