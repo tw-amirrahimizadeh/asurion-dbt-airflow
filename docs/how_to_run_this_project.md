@@ -7,7 +7,7 @@ The first thing you need to do, is to create a fork of the repository. You can d
 button found on the top right corner of the project's page on GitHub. Once you create a fork, you'll then have
 to clone your fork onto your local machine. 
 
-### Spin up the docker containers
+### Setting Up Docker Containers
 
 you can spin up the docker containers from the images
 specified in `docker-compose.yml` and `Dockerfile` files. 
@@ -27,7 +27,7 @@ The commands above will spin up the following containers:
 The Postgres instance can be accessed in the following way (note that default port was changed to `5433` given that we 
 have an additional postgres instance for Airflow itself):
 ```bash
-# Get the id of the running postgres-sakila container
+# Find the id of the running postgres-sakila container
 $ docker ps
 
 # Enter the running container
@@ -40,7 +40,7 @@ $ psql -U postgres -p 5433
 You will now be able to run Airflow DAGs authored with the use of `dbt-airflow` where you can also evaluate results
 either on the Airflow UI (webserver) or on the local database itself. 
 
-## Customize the project or contribute to the project.
+## Customizing and Contributing to the Project
 
 ## Setting up a local environment
 The next few sections will help you set up a local development environment where you can quickly test your changes, 
