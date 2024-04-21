@@ -16,12 +16,12 @@ dag = DAG('dbt_daily_dag', default_args=default_args, schedule_interval=timedelt
 # Define dbt tasks using BashOperator
 task1 = BashOperator(
     task_id='dbt_task1',
-    bash_command='dbt run --models model1 model2',
+    bash_command='dbt run',
     dag=dag
 )
 task2 = BashOperator(
     task_id='dbt_task2',
-    bash_command='dbt run --models model3 model4',
+    bash_command='dbt test',
     dag=dag
 )
 # Set task dependencies
