@@ -1,5 +1,5 @@
 
-## Run the project as it is
+# Run the project as it is
 
 ### Creating a fork 
 
@@ -40,7 +40,7 @@ $ psql -U postgres -p 5433
 You will now be able to run Airflow DAGs authored with the use of `dbt-airflow` where you can also evaluate results
 either on the Airflow UI (webserver) or on the local database itself. 
 
-## Customizing and Contributing to the Project
+# Customizing and Contributing to the Project
 
 ## Setting up a local environment
 The next few sections will help you set up a local development environment where you can quickly test your changes, 
