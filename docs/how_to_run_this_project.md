@@ -24,6 +24,21 @@ The commands above will spin up the following containers:
 - A postgres instance containing the popular Sakila data, where dbt models can materialize
 - A container that gives you access to `dbt` CLI where you can run further `dbt` commands
 
+The Postgres instance can be accessed in the following way (note that default port was changed to `5433` given that we 
+have an additional postgres instance for Airflow itself):
+```bash
+# Get the id of the running postgres-sakila container
+$ docker ps
+
+# Enter the running container
+$ docker exec -it <container-id> /bin/bash
+
+# Enter psql
+$ psql -U postgres -p 5433 
+```
+
+You will now be able to run Airflow DAGs authored with the use of `dbt-airflow` where you can also evaluate results
+either on the Airflow UI (webserver) or on the local database itself. 
 
 ## Customize the project or contribute to the project.
 
