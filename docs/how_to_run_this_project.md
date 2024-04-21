@@ -93,3 +93,6 @@ Basically, the commands above will spin up the following containers:
 - An Airflow instance whose webserver can be accessd on `localhost:8080` (use `airflow` and `airflow` in user/pass credentials)
 - A postgres instance containing the popular Sakila data, where dbt models can materialize
 - A container that gives you access to `dbt` CLI where you can run further `dbt` commands
+
+Opening a Pull Request
+Once you have finished your local work, it's time to get it reviewed by project maintainers and other contributors. To do so, create a Pull Request from your fork into the original repository, gmyrianthous/dbt-airflow.
