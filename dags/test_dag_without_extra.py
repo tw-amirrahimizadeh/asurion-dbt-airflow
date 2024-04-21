@@ -1,4 +1,3 @@
-mport functools
 from datetime import datetime 
 from datetime import timedelta
 from pathlib import Path
@@ -14,7 +13,7 @@ from dbt_airflow.operators.execution import ExecutionOperator
 
 
 with DAG(
-    dag_id='test_dag',
+    dag_id='test_dag_without_extras',
     start_date=datetime(2021, 1, 1),
     catchup=False,
     tags=['example'],
@@ -23,9 +22,7 @@ with DAG(
         'retries': 1,
         'retry_delay': timedelta(minutes=2),
     },
-    'on_failure_callback': functools.partial(
-        our_callback_function_to_send_slack_alerts
-    ),
+    
 ) as dag:
 
     t1 = EmptyOperator(task_id='extract')
@@ -34,11 +31,11 @@ with DAG(
     tg = DbtTaskGroup(
         group_id='transform',
         dbt_project_config=DbtProjectConfig(
-            project_path=Path('/path/to/example_dbt_project/'),
-            manifest_path=Path('/path/to/example_dbt_project/target/manifest.json'),
+            project_path=Path('/opt/airflow/example_dbt_project/'),
+            manifest_path=Path('/opt/airflow/example_dbt_project/target/manifest.json'),
         ),
         dbt_profile_config=DbtProfileConfig(
-            profiles_path=Path('/path/to/example_dbt_project/profiles'),
+            profiles_path=Path('/opt/airflow/example_dbt_project/profiles'),
             target='dev',
         ),
         dbt_airflow_config=DbtAirflowConfig(
