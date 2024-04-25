@@ -18,6 +18,9 @@ $ docker compose build --no-cache
 
 # Run the containers
 $ docker compose up
+
+# Shutdown the containers
+$ docker compose down
 ```
 The commands above will spin up the following containers:
 - An Airflow instance whose webserver can be accessd on `localhost:8080` (use `airflow` and `airflow` in user/pass credentials)
