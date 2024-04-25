@@ -19,6 +19,7 @@ $ docker compose build --no-cache
 # Run the containers
 $ docker compose up
 
+# Once everything is tested please shut down the containers 
 # Shutdown the containers
 $ docker compose down
 ```
